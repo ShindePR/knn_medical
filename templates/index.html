@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Insurance Charges Prediction </title>
+</head>
+<style>
+    body {
+          background-image: url('data:image/jpeg;base64,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');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+        }
+    </style>
+
+<body style="background-color: rgb(215, 201, 209);">
+
+    <h1> Medical Insurance Charges Prediction By using KNN </h1>
+    <form method="GET" action="/pred_insurance">
+
+        <label>Age:</label>
+        <input type = "text" name = "age">
+        </select>
+
+        <br>
+        <br>
+
+        <label>Sex:</label>
+        <select name = "sex">
+            <option value = "male">Male</option>
+            <option value = "female">Female</option>
+        </select>
+
+        <br>
+        <br>
+
+        <label>BMI:</label>
+        <input type = "text" name = "bmi">
+        </select>
+
+        <br>
+        <br>
+
+        <label>Children:</label>
+        <input type = "text" name = "children">
+        </select>
+
+        
+
+        <br>
+        <br>
+
+        <label>Smoker:</label>
+        <label>Yes</label> <input type = "radio" name= "smoker" value = "yes">
+        <label>No:</label> <input type = "radio" name= "smoker" value = "no">
+        </select>
+
+        <br>
+        <br>
+
+        <label>Region:</label>
+        <select name = "region">
+            <option value = "northeast">Northeast</option>
+            <option value = "northwest">Northwest</option>
+            <option value = "southeast">Southeast</option>
+            <option value = "southwest">Southwest</option>
+        </select>
+
+
+        <br>
+        <br>
+
+        <input type = "submit" value="SUBMIT">
+
+        <br>
+
+        <p>Your premium medical insurance will be <b> {{ prediction }} /- Rs.</b> Only </p>
+
+
+    </form>
+
+
+</body>
+</html>
